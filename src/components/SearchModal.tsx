@@ -68,7 +68,7 @@ export function SearchModal({
                 onClick={onClose}
                 className="group flex items-center gap-4"
               >
-                <ClothImage seed={p.featuredImage.seed} alt={p.featuredImage.altText} className="h-16 w-14 shrink-0" />
+                <ClothImage seed={p.featuredImage.seed} src={p.featuredImage.src} alt={p.featuredImage.altText} className="h-16 w-14 shrink-0" />
                 <span className="flex-1">
                   <span className="block font-display text-lg group-hover:text-indigo-dip">
                     {p.title[locale]}

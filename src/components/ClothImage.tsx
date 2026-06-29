@@ -12,6 +12,8 @@ export function ClothImage({
   brassAccent,
   className = '',
   priority = false,
+  src,
+  position,
 }: {
   seed: string;
   alt: string;
@@ -19,14 +21,19 @@ export function ClothImage({
   brassAccent?: boolean;
   className?: string;
   priority?: boolean;
+  /** Real photograph path (e.g. "/images/bear_07.jpg"). When set, the deterministic
+      cloth placeholder is bypassed and this image is shown instead. */
+  src?: string;
+  /** CSS background-position override (default "center"), e.g. "top". */
+  position?: string;
 }) {
-  const uri = clothDataUri({ seed, motif, brassAccent });
+  const uri = src ?? clothDataUri({ seed, motif, brassAccent });
   return (
     <div
       role="img"
       aria-label={alt}
-      className={`bg-indigo-night bg-cover bg-center ${className}`}
-      style={{ backgroundImage: `url("${uri}")` }}
+      className={`bg-indigo-night bg-cover ${className}`}
+      style={{ backgroundImage: `url("${uri}")`, backgroundPosition: position ?? 'center' }}
       data-placeholder="cloth"
       data-priority={priority ? 'true' : undefined}
     />

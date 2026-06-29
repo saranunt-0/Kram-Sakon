@@ -4,7 +4,15 @@ import { ClothImage } from './ClothImage';
 /* @kramsakon grid (§6). Placeholder tiles until the IG feed is wired in. */
 export async function InstagramFeed() {
   const t = await getTranslations('Home');
-  const tiles = Array.from({ length: 6 }, (_, i) => `ig-${i + 1}`);
+  // "From the studio" — real workshop photography, with close-ups filling the row.
+  const tiles = [
+    '/images/workshop_01.png',
+    '/images/workshop_02.png',
+    '/images/closeup_07.jpg',
+    '/images/closeup_09.jpg',
+    '/images/closeup_11.jpg',
+    '/images/closeup_13.jpg',
+  ];
 
   return (
     <section className="mx-auto max-w-content px-4 py-16 sm:px-6">
@@ -23,17 +31,18 @@ export async function InstagramFeed() {
         </a>
       </div>
       <div className="grid grid-cols-3 gap-2 sm:gap-3 md:grid-cols-6">
-        {tiles.map((seed, i) => (
+        {tiles.map((src, i) => (
           <a
-            key={seed}
+            key={src}
             href="https://instagram.com/kramsakon"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative aspect-square overflow-hidden bg-cream-cotton"
           >
             <ClothImage
-              seed={seed}
-              alt={`Kram Sakon on Instagram, post ${i + 1}`}
+              seed={`ig-${i + 1}`}
+              src={src}
+              alt={`Kram Sakon from the studio, image ${i + 1}`}
               className="absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-105"
             />
           </a>

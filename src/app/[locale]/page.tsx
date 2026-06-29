@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/lib/commerce/types';
 import { Hero } from '@/components/Hero';
+import { StorySlideshow } from '@/components/StorySlideshow';
 import { CategoryTile } from '@/components/CategoryTile';
 import { FeaturedChapter } from '@/components/FeaturedChapter';
 import { CredibilityBand } from '@/components/CredibilityBand';
@@ -24,6 +25,9 @@ export default async function HomePage({
   return (
     <>
       <Hero />
+
+      {/* Small story section — rotating process photography */}
+      <StorySlideshow />
 
       {/* Brand thesis + category tiles */}
       <section className="mx-auto max-w-content px-4 py-20 sm:px-6 lg:py-28">

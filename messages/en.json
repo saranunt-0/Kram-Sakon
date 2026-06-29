@@ -4,14 +4,14 @@
     "tagline": "Living indigo from Sakon Nakhon"
   },
   "Announcement": {
-    "ship": "Complimentary shipping within Thailand",
-    "natural": "100% natural indigo — no chemicals, ever",
+    "natural": "100% natural indigo",
     "handmade": "Hand-dyed & hand-woven — every piece is one of a kind"
   },
   "Nav": {
     "shop": "Shop",
     "collections": "Collections",
     "story": "Story",
+    "workshop": "Workshop",
     "journal": "Journal",
     "visit": "Visit",
     "stockists": "Stockists",
@@ -50,7 +50,25 @@
     "mostLovedSub": "A few pieces our makers return to again and again.",
     "viewAll": "Shop all",
     "instagram": "From the studio",
-    "instagramCta": "Follow @kramsakon"
+    "instagramCta": "Follow @kramsakon",
+    "story": {
+      "eyebrow": "From plant to cloth",
+      "headline": "A slow craft, made by hand",
+      "cta": "Read our story",
+      "workshopCta": "Join a workshop",
+      "slide1": {
+        "alt": "Lifting indigo-dyed yarn into the air to oxidise",
+        "text": "The dye is a living vat. Yarn is lifted to the air, where it turns from green to deep blue before your eyes."
+      },
+      "slide2": {
+        "alt": "Hands working the indigo vat",
+        "text": "Every dip is read by hand — the vat fed, kept warm, and tended each morning like something alive."
+      },
+      "slide3": {
+        "alt": "Indigo cloth drying in the shade",
+        "text": "Folded, bound, and dipped again and again, then dried in the shade. No two pieces come out the same."
+      }
+    }
   },
   "Newsletter": {
     "eyebrow": "Stay close",
@@ -69,6 +87,7 @@
     "soldOut": "Sold out",
     "quickAdd": "Quick add",
     "from": "From",
+    "priceOnRequest": "Price on request",
     "color": "Colour",
     "size": "Size",
     "selectOption": "Select {option}",
@@ -157,7 +176,20 @@
     "message": "Message",
     "submit": "Send message",
     "success": "Thank you — we will reply within two business days.",
-    "detailsTitle": "Other ways to reach us"
+    "detailsTitle": "Other ways to reach us",
+    "storeName": "Kramsakon",
+    "addressTitle": "Address",
+    "address": "212 Huai Yang, Mueang Sakon Nakhon District, Sakon Nakhon 47000, Thailand",
+    "hoursTitle": "Opening hours",
+    "hours": "Open daily, 08:00 – 17:00",
+    "phoneLabel": "Phone",
+    "lineLabel": "LINE",
+    "facebookLabel": "Facebook",
+    "directions": "Get directions",
+    "mapTitle": "Find us",
+    "formTitle": "Send us a message",
+    "workshopTitle": "Visit the studio & workshops",
+    "workshopBody": "Indigo-dyeing workshops are available at our studio by appointment. Get in touch to arrange a visit and dye a piece of your own."
   },
   "Stockists": {
     "eyebrow": "Wholesale & stockists",

@@ -19,6 +19,7 @@ export async function FeaturedChapter({ products }: { products: Product[] }) {
         <Reveal className="relative aspect-[4/5] overflow-hidden bg-cream-cotton">
           <ClothImage
             seed="chapter-process-vat"
+            src="/images/closeup_01.jpg"
             alt="A dyer lowering folded cloth into the living indigo vat"
             motif="spiral"
             className="absolute inset-0 h-full w-full"

@@ -26,7 +26,9 @@ export default async function CollectionsIndex({
             <div className="relative aspect-[3/4] overflow-hidden bg-cream-cotton">
               <ClothImage
                 seed={c.image.seed}
+                src={c.image.src}
                 alt={c.image.altText}
+                position="top"
                 className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-indigo-night/60 to-transparent" />

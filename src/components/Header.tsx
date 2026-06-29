@@ -14,7 +14,9 @@ const NAV = [
   { key: 'shop', href: '/shop' },
   { key: 'collections', href: '/collections' },
   { key: 'story', href: '/story' },
-  { key: 'journal', href: '/journal' },
+  { key: 'workshop', href: '/workshop' },
+  // Journal is turned off for now (page kept, just unlinked). Re-add when ready:
+  // { key: 'journal', href: '/journal' },
 ] as const;
 
 export function Header({
@@ -73,7 +75,7 @@ export function Header({
             <SearchIcon />
           </button>
           <Link href="/contact" aria-label={t('contact')} className="hidden sm:block">
-            <AccountIcon />
+            <MailIcon />
           </Link>
         </div>
       </div>
@@ -94,7 +96,9 @@ export function Header({
               >
                 <ClothImage
                   seed={c.image.seed}
+                  src={c.image.src}
                   alt={c.image.altText}
+                  position="top"
                   className="h-20 w-16 shrink-0"
                 />
                 <span>
@@ -185,11 +189,11 @@ function SearchIcon() {
     </svg>
   );
 }
-function AccountIcon() {
+function MailIcon() {
   return (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M4 7l8 6 8-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

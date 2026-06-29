@@ -1,10 +1,13 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/lib/commerce/types';
-import { Link } from '@/i18n/navigation';
-import { ClothImage } from '@/components/ClothImage';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
-import { journalPosts } from '@/lib/journal';
 
+/*
+  Journal is TURNED OFF for now (per founder guidance). The page and its data
+  (`@/lib/journal`, the `journal/[handle]` route) are intentionally kept so it
+  can be switched back on later — we simply unlink it from the nav/footer and
+  show a "coming soon" notice here instead of the post grid.
+*/
 export default async function JournalPage({
   params,
 }: {
@@ -23,31 +26,10 @@ export default async function JournalPage({
         <p className="mt-4 text-tamarind">{t('lead')}</p>
       </header>
 
-      <div className="mt-12 grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
-        {journalPosts.map((post) => (
-          <Link key={post.handle} href={`/journal/${post.handle}`} className="group block">
-            <div className="relative aspect-[3/2] overflow-hidden bg-cream-cotton">
-              <ClothImage
-                seed={post.seed}
-                alt={post.title[locale]}
-                className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-            <p className="eyebrow mt-4">
-              {new Intl.DateTimeFormat(locale === 'th' ? 'th-TH' : 'en-GB', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-              }).format(new Date(post.date))}
-              {' · '}
-              {t('readingTime', { min: post.readingMinutes })}
-            </p>
-            <h2 className="mt-2 font-display text-xl leading-snug group-hover:text-indigo-dip">
-              {post.title[locale]}
-            </h2>
-            <p className="mt-2 text-sm text-tamarind">{post.excerpt[locale]}</p>
-          </Link>
-        ))}
+      <div className="mt-16 border-t border-line py-20 text-center">
+        <p className="mx-auto max-w-md font-display text-2xl font-light text-indigo-night/80">
+          {t('empty')}
+        </p>
       </div>
     </div>
   );

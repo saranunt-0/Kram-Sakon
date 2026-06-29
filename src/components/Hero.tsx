@@ -17,6 +17,7 @@ export function Hero() {
     <section className="relative h-[82vh] min-h-[560px] w-full overflow-hidden">
       <ClothImage
         seed="hero-indigo-vat"
+        src="/images/closeup_16.png"
         alt="Cloth lifted from a natural indigo vat, oxidising from green to deep blue"
         motif="shibori"
         priority

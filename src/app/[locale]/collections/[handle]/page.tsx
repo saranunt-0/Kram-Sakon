@@ -37,8 +37,10 @@ export default async function CollectionPage({
       <section className="relative h-[42vh] min-h-[320px] overflow-hidden">
         <ClothImage
           seed={collection.image.seed}
+          src={collection.image.src}
           alt={collection.image.altText}
           priority
+          position="top"
           className="absolute inset-0 h-full w-full"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-indigo-night/75 to-indigo-night/15" />

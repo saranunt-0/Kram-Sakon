@@ -14,10 +14,10 @@ export default async function StoryPage({
   const t = await getTranslations('Story');
 
   const chapters = [
-    { title: t('s1Title'), body: t('s1Body'), seed: 'story-plant', motif: 'fold' as const },
-    { title: t('s2Title'), body: t('s2Body'), seed: 'story-vat', motif: 'shibori' as const },
-    { title: t('s3Title'), body: t('s3Body'), seed: 'story-hand', motif: 'spiral' as const },
-    { title: t('s4Title'), body: t('s4Body'), seed: 'story-city', motif: 'shibori' as const },
+    { title: t('s1Title'), body: t('s1Body'), seed: 'story-plant', src: '/images/process_00.png', motif: 'fold' as const },
+    { title: t('s2Title'), body: t('s2Body'), seed: 'story-vat', src: '/images/process_06.png', motif: 'shibori' as const },
+    { title: t('s3Title'), body: t('s3Body'), seed: 'story-hand', src: '/images/process_01.jpg', motif: 'spiral' as const },
+    { title: t('s4Title'), body: t('s4Body'), seed: 'story-city', src: '/images/process_05.png', motif: 'shibori' as const },
   ];
 
   return (
@@ -26,6 +26,7 @@ export default async function StoryPage({
       <section className="relative h-[64vh] min-h-[440px] overflow-hidden">
         <ClothImage
           seed="story-hero-loom"
+          src="/images/process_00.png"
           alt="Indigo cloth on the loom in Sakon Nakhon"
           priority
           motif="shibori"
@@ -58,6 +59,7 @@ export default async function StoryPage({
           <Reveal className="relative aspect-[4/5] overflow-hidden bg-cream-cotton">
             <ClothImage
               seed={ch.seed}
+              src={ch.src}
               alt={ch.title}
               motif={ch.motif}
               className="absolute inset-0 h-full w-full"

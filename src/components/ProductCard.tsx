@@ -35,12 +35,14 @@ export function ProductCard({ product }: { product: Product }) {
       >
         <ClothImage
           seed={product.featuredImage.seed}
+          src={product.featuredImage.src}
           alt={product.featuredImage.altText}
           className="absolute inset-0 h-full w-full transition-opacity duration-700 group-hover:opacity-0"
         />
         {contextImage && (
           <ClothImage
             seed={contextImage.seed}
+            src={contextImage.src}
             alt={contextImage.altText}
             className="absolute inset-0 h-full w-full opacity-0 transition-opacity duration-700 group-hover:opacity-100"
           />

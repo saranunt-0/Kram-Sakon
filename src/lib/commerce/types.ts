@@ -16,6 +16,9 @@ export interface Money {
 export interface ProductImage {
   /** Stable seed used by the mock cloth generator; replace with a real `url` for Shopify. */
   seed: string;
+  /** Real static photograph path (e.g. "/images/bear_07.jpg"). When present, the UI
+      renders this instead of the generated cloth placeholder. */
+  src?: string;
   altText: string;
   /** "flat" (on cream), "context" (on-body / styled), or "process" (the craft). */
   kind?: 'flat' | 'context' | 'process';

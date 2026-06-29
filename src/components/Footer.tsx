@@ -46,7 +46,7 @@ export async function Footer() {
           ])}
           {col(t('explore'), [
             { label: nav('story'), href: '/story' },
-            { label: nav('journal'), href: '/journal' },
+            // Journal turned off for now — link removed, page retained.
             { label: nav('visit'), href: '/visit' },
             { label: nav('stockists'), href: '/stockists' },
           ])}

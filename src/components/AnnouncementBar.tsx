@@ -11,7 +11,7 @@ import { RegionCurrencySwitcher } from './RegionCurrencySwitcher';
 */
 export function AnnouncementBar() {
   const t = useTranslations('Announcement');
-  const messages = [t('ship'), t('natural'), t('handmade')];
+  const messages = [t('natural'), t('handmade')];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {

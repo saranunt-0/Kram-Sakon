@@ -24,7 +24,7 @@ export function ProductGallery({ images }: { images: ProductImage[] }) {
                 i === active ? 'border-indigo-vat' : 'border-line hover:border-indigo-first'
               }`}
             >
-              <ClothImage seed={img.seed} alt={img.altText} className="absolute inset-0 h-full w-full" />
+              <ClothImage seed={img.seed} src={img.src} alt={img.altText} className="absolute inset-0 h-full w-full" />
             </button>
           ))}
         </div>
@@ -33,6 +33,7 @@ export function ProductGallery({ images }: { images: ProductImage[] }) {
       <div className="group relative aspect-[4/5] flex-1 overflow-hidden bg-cream-cotton">
         <ClothImage
           seed={current.seed}
+          src={current.src}
           alt={current.altText}
           priority
           className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105"
