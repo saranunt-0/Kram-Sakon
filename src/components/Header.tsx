@@ -8,7 +8,6 @@ import { ClothImage } from './ClothImage';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { RegionCurrencySwitcher } from './RegionCurrencySwitcher';
 import { SearchModal } from './SearchModal';
-import { useShop } from '@/lib/cart/context';
 import type { Collection, Locale, Product } from '@/lib/commerce/types';
 
 const NAV = [
@@ -28,7 +27,6 @@ export function Header({
   const t = useTranslations('Nav');
   const locale = useLocale() as Locale;
   const pathname = usePathname();
-  const { count, openCart } = useShop();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -74,22 +72,9 @@ export function Header({
           <button type="button" aria-label={t('search')} onClick={() => setSearchOpen(true)}>
             <SearchIcon />
           </button>
-          <Link href="/contact" aria-label={t('account')} className="hidden sm:block">
+          <Link href="/contact" aria-label={t('contact')} className="hidden sm:block">
             <AccountIcon />
           </Link>
-          <button
-            type="button"
-            aria-label={t('cart')}
-            onClick={openCart}
-            className="relative"
-          >
-            <BagIcon />
-            {count > 0 && (
-              <span className="absolute -right-2 -top-2 grid h-4 min-w-4 place-items-center rounded-full bg-indigo-vat px-1 text-[10px] font-medium text-cream-resist">
-                {count}
-              </span>
-            )}
-          </button>
         </div>
       </div>
 
@@ -205,19 +190,6 @@ function AccountIcon() {
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
       <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="1.5" />
       <path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  );
-}
-function BagIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M6 8h12l-1 12H7L6 8Z M9 8V6a3 3 0 0 1 6 0v2"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
     </svg>
   );
 }

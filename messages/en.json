@@ -63,6 +63,7 @@
   },
   "Product": {
     "addToCart": "Add to bag",
+    "contactToOrder": "Contact to order",
     "adding": "Adding…",
     "added": "Added",
     "soldOut": "Sold out",
@@ -81,6 +82,15 @@
     "badgeNew": "New",
     "badgeLimited": "Limited",
     "badgeLastFew": "Last few"
+  },
+  "StoreContact": {
+    "title": "Order directly from us",
+    "intro": "This is a preview site — online checkout isn't open yet. To buy this piece or ask a question, reach us directly and we'll arrange everything for you.",
+    "phone": "Phone",
+    "line": "LINE",
+    "email": "Email",
+    "locationLabel": "Visit",
+    "location": "Sakon Nakhon, Thailand"
   },
   "Collection": {
     "allProducts": "All pieces",

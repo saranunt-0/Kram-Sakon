@@ -2,6 +2,9 @@ import type { MetadataRoute } from 'next';
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
 
+// Emit a static robots.txt file in the export (output: 'export' requires this).
+export const dynamic = 'force-static';
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: '*', allow: '/' },

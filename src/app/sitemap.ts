@@ -5,6 +5,9 @@ import { journalPosts } from '@/lib/journal';
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
 
+// Emit a static sitemap.xml file in the export (output: 'export' requires this).
+export const dynamic = 'force-static';
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [collections, products] = await Promise.all([
     getAllCollectionHandles(),

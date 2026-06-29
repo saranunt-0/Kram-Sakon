@@ -2,14 +2,12 @@ import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Locale } from '@/lib/commerce/types';
 import { ClothImage } from '@/components/ClothImage';
-import { ProductGrid } from '@/components/ProductGrid';
-import { CollectionToolbar } from '@/components/CollectionToolbar';
+import { ProductBrowser } from '@/components/ProductBrowser';
 import { Breadcrumbs } from '@/components/Breadcrumbs';
 import {
   getAllCollectionHandles,
   getCollection,
   getProductsByCollection,
-  type SortKey,
 } from '@/lib/commerce/client';
 import { routing } from '@/i18n/routing';
 
@@ -20,20 +18,18 @@ export async function generateStaticParams() {
 
 export default async function CollectionPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ locale: Locale; handle: string }>;
-  searchParams: Promise<{ sort?: string }>;
 }) {
   const { locale, handle } = await params;
   setRequestLocale(locale);
-  const { sort = 'featured' } = await searchParams;
 
   const collection = await getCollection(handle);
   if (!collection) notFound();
 
   const nav = await getTranslations('Nav');
-  const products = await getProductsByCollection(handle, sort as SortKey);
+  // Full list in featured order; the client ProductBrowser reorders on sort.
+  const products = await getProductsByCollection(handle, 'featured');
 
   return (
     <div>
@@ -61,10 +57,7 @@ export default async function CollectionPage({
             { label: collection.title[locale] },
           ]}
         />
-        <CollectionToolbar count={products.length} sort={sort} />
-        <div className="mt-10">
-          <ProductGrid products={products} />
-        </div>
+        <ProductBrowser products={products} />
       </div>
     </div>
   );

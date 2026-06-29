@@ -1,29 +1,27 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { useRouter, usePathname } from '@/i18n/navigation';
+import type { SortKey } from './ProductBrowser';
 
 /*
   Filter + sort toolbar (§6). First draft ships sort + a result count; the filter
   button is a stub until faceted filtering is wired to the Storefront API.
+
+  Sort is handled client-side via onSortChange (no URL query) so Shop + Collection
+  stay fully static in the export (STATIC-DEPLOYMENT-PLAN.md §4.4).
 */
 export function CollectionToolbar({
   count,
   sort,
+  onSortChange,
 }: {
   count: number;
-  sort: string;
+  sort: SortKey;
+  onSortChange: (value: SortKey) => void;
 }) {
   const t = useTranslations('Collection');
-  const router = useRouter();
-  const pathname = usePathname();
 
-  const onSort = (value: string) => {
-    const params = new URLSearchParams();
-    if (value !== 'featured') params.set('sort', value);
-    const qs = params.toString();
-    router.push(qs ? `${pathname}?${qs}` : pathname);
-  };
+  const onSort = (value: string) => onSortChange(value as SortKey);
 
   return (
     <div className="flex items-center justify-between border-b border-line py-4">

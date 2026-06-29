@@ -4,23 +4,24 @@ import { useMemo, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Price } from './Price';
 import { Button } from './ui';
-import { useShop } from '@/lib/cart/context';
+import { StoreContact } from './StoreContact';
 import type { Locale, Product } from '@/lib/commerce/types';
 
 /*
-  PDP info + add-to-cart (§6). Surfaces materials, care, dimensions, and the
-  mandatory "each piece varies" handmade note (§7.2, §11).
+  PDP info + buy action (§6). This static first-draft has no online checkout, so
+  "buy" reveals the store's contact details instead of adding to a cart. Still
+  surfaces materials, care, dimensions, and the mandatory "each piece varies"
+  handmade note (§7.2, §11).
 */
 export function ProductInfo({ product }: { product: Product }) {
   const t = useTranslations('Product');
   const locale = useLocale() as Locale;
-  const { addItem } = useShop();
 
   // Track a selected value per option name.
   const [selected, setSelected] = useState<Record<string, string>>(() =>
     Object.fromEntries(product.options.map((o) => [o.name, o.values[0]]))
   );
-  const [justAdded, setJustAdded] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   const activeVariant = useMemo(() => {
     return (
@@ -31,13 +32,6 @@ export function ProductInfo({ product }: { product: Product }) {
   }, [product.variants, selected]);
 
   const available = activeVariant?.availableForSale;
-
-  const onAdd = () => {
-    if (!available) return;
-    addItem(product, activeVariant, 1);
-    setJustAdded(true);
-    setTimeout(() => setJustAdded(false), 1800);
-  };
 
   return (
     <div className="flex flex-col">
@@ -86,9 +80,15 @@ export function ProductInfo({ product }: { product: Product }) {
       ))}
 
       <div className="mt-8">
-        <Button onClick={onAdd} disabled={!available} className="w-full sm:w-auto sm:min-w-64">
-          {!available ? t('soldOut') : justAdded ? t('added') : t('addToCart')}
+        <Button
+          onClick={() => setShowContact(true)}
+          disabled={!available}
+          aria-expanded={showContact}
+          className="w-full sm:w-auto sm:min-w-64"
+        >
+          {!available ? t('soldOut') : t('contactToOrder')}
         </Button>
+        {showContact && available && <StoreContact className="mt-5" />}
       </div>
 
       {/* Mandatory handmade-variation note */}

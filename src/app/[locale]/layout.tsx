@@ -7,7 +7,6 @@ import { ShopProvider } from '@/lib/cart/context';
 import { AnnouncementBar } from '@/components/AnnouncementBar';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { CartDrawer } from '@/components/CartDrawer';
 import { CookieConsent } from '@/components/CookieConsent';
 import { getCollections, getProducts } from '@/lib/commerce/client';
 import { fontVariables } from '../fonts';
@@ -75,7 +74,6 @@ export default async function LocaleLayout({
             <Header collections={collections} products={products} />
             <main id="main">{children}</main>
             <Footer />
-            <CartDrawer />
             <CookieConsent />
           </ShopProvider>
         </NextIntlClientProvider>
