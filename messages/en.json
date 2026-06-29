@@ -1,0 +1,203 @@
+{
+  "Brand": {
+    "name": "Kram Sakon",
+    "tagline": "Living indigo from Sakon Nakhon"
+  },
+  "Announcement": {
+    "ship": "Complimentary shipping within Thailand",
+    "natural": "100% natural indigo — no chemicals, ever",
+    "handmade": "Hand-dyed & hand-woven — every piece is one of a kind"
+  },
+  "Nav": {
+    "shop": "Shop",
+    "collections": "Collections",
+    "story": "Story",
+    "journal": "Journal",
+    "visit": "Visit",
+    "stockists": "Stockists",
+    "contact": "Contact",
+    "search": "Search",
+    "account": "Account",
+    "wishlist": "Wishlist",
+    "cart": "Cart",
+    "menu": "Menu",
+    "close": "Close",
+    "openMenu": "Open menu"
+  },
+  "Switcher": {
+    "language": "Language",
+    "region": "Region & currency",
+    "th": "ไทย",
+    "en": "English"
+  },
+  "Home": {
+    "heroEyebrow": "Natural indigo · Sakon Nakhon",
+    "heroHeadline": "Cloth dyed in a living vat",
+    "heroSub": "Cold-fermented, one hundred percent natural indigo — woven and resist-dyed by hand, so no two pieces are alike.",
+    "heroCta": "Shop the collection",
+    "thesisEyebrow": "The house of Kram",
+    "thesisHeadline": "Living indigo from Sakon Nakhon",
+    "thesisBody": "The blue comes from the kram plant — a cold, fermented, wholly natural vat tended by hand. Sakon Nakhon is recognised by the World Crafts Council as a World Craft City for Natural Indigo.",
+    "thesisCta": "Read our story",
+    "shopByCategory": "Shop by category",
+    "chapterEyebrow": "How it is made",
+    "chapterHeadline": "Raising an indigo vat is like raising a child",
+    "chapterBody": "The vat is alive. It is fed, kept warm, and read each morning by its colour and scent. Cloth is folded, bound, and lowered in — then lifted to the air, where it turns from green to deep blue before your eyes.",
+    "chapterCtaStory": "Read the story",
+    "chapterCtaShop": "Shop the collection",
+    "credibility": "World Craft City for Natural Indigo · 100% natural, chemical-free dye",
+    "mostLoved": "Most loved",
+    "mostLovedSub": "A few pieces our makers return to again and again.",
+    "viewAll": "Shop all",
+    "instagram": "From the studio",
+    "instagramCta": "Follow @kramsakon"
+  },
+  "Newsletter": {
+    "eyebrow": "Stay close",
+    "headline": "Letters from the vat",
+    "body": "Seasonal releases, dye-day notes, and quiet invitations. No noise.",
+    "placeholder": "Your email address",
+    "submit": "Subscribe",
+    "success": "Thank you — please check your inbox to confirm.",
+    "consent": "By subscribing you agree to our Privacy Policy."
+  },
+  "Product": {
+    "addToCart": "Add to bag",
+    "adding": "Adding…",
+    "added": "Added",
+    "soldOut": "Sold out",
+    "quickAdd": "Quick add",
+    "from": "From",
+    "color": "Colour",
+    "size": "Size",
+    "selectOption": "Select {option}",
+    "materials": "Materials",
+    "care": "Care",
+    "dimensions": "Dimensions",
+    "variationNote": "Each piece varies",
+    "variationBody": "Dyed and woven by hand in a natural indigo vat. Slight variations in shade, pattern, and weave are inherent to the craft — they are the signature of a piece made by human hands, not a flaw.",
+    "details": "Details",
+    "relatedTitle": "Pairs well with",
+    "badgeNew": "New",
+    "badgeLimited": "Limited",
+    "badgeLastFew": "Last few"
+  },
+  "Collection": {
+    "allProducts": "All pieces",
+    "filter": "Filter",
+    "sort": "Sort",
+    "sortFeatured": "Featured",
+    "sortPriceAsc": "Price: low to high",
+    "sortPriceDesc": "Price: high to low",
+    "sortNewest": "Newest",
+    "results": "{count} pieces",
+    "empty": "No pieces here yet — please check back soon."
+  },
+  "Cart": {
+    "title": "Your bag",
+    "empty": "Your bag is empty.",
+    "emptyCta": "Continue shopping",
+    "subtotal": "Subtotal",
+    "taxNote": "Taxes and shipping calculated at checkout.",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "quantity": "Quantity",
+    "continue": "Continue shopping",
+    "demoNote": "Demo build — checkout is mocked"
+  },
+  "Story": {
+    "eyebrow": "Our story",
+    "title": "The kram plant, the living vat, the hand",
+    "lead": "Kram Sakon makes living indigo in Sakon Nakhon — a slow craft of plant, water, time, and the human hand.",
+    "s1Title": "The plant",
+    "s1Body": "Indigo begins as a leaf. The kram plant is grown, cut, and steeped until its pigment releases into water — the first step in a process measured in days, not minutes.",
+    "s2Title": "The living vat",
+    "s2Body": "The dye is a cold, fermented, one-hundred-percent natural vat. It is alive: fed with care, kept at the right warmth, and read each morning. Raising an indigo vat is like raising a child.",
+    "s3Title": "The hand",
+    "s3Body": "Cloth is folded and bound — shibori — then dipped and lifted, again and again. With air, the green oxidises into deep blue. Because every fold and every dip is made by hand, every piece is one of a kind.",
+    "s4Title": "World Craft City",
+    "s4Body": "Sakon Nakhon is recognised by the World Crafts Council as a World Craft City for Natural Indigo — a home of this living tradition."
+  },
+  "Journal": {
+    "eyebrow": "Journal",
+    "title": "Notes from the studio",
+    "lead": "Dye days, makers, and the slow seasons of indigo.",
+    "readMore": "Read",
+    "readingTime": "{min} min read",
+    "empty": "New entries are on the way."
+  },
+  "Visit": {
+    "eyebrow": "Visit",
+    "title": "The boutique",
+    "lead": "You are welcome to see the cloth in person and meet the makers.",
+    "addressTitle": "Address",
+    "hoursTitle": "Hours",
+    "hours": "Mon–Sat, 9:00–18:00",
+    "contactTitle": "Contact",
+    "phoneLabel": "Phone",
+    "directions": "Get directions"
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "Say hello",
+    "lead": "Questions about a piece, an order, or a visit — we would love to hear from you.",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "submit": "Send message",
+    "success": "Thank you — we will reply within two business days.",
+    "detailsTitle": "Other ways to reach us"
+  },
+  "Stockists": {
+    "eyebrow": "Wholesale & stockists",
+    "title": "Carry Kram Sakon",
+    "lead": "We partner with a small number of boutiques and galleries who share a love of natural craft.",
+    "currentTitle": "Where to find us",
+    "enquiryTitle": "Wholesale enquiry",
+    "company": "Company / boutique",
+    "name": "Contact name",
+    "email": "Email",
+    "country": "Country",
+    "message": "Tell us about your shop",
+    "submit": "Send enquiry",
+    "success": "Thank you — our wholesale team will be in touch."
+  },
+  "Footer": {
+    "tagline": "Living indigo, dyed and woven by hand in Sakon Nakhon.",
+    "shop": "Shop",
+    "explore": "Explore",
+    "support": "Support",
+    "connect": "Connect",
+    "shipping": "Shipping",
+    "returns": "Returns",
+    "privacy": "Privacy (PDPA)",
+    "terms": "Terms",
+    "rights": "All rights reserved.",
+    "madeIn": "Made in Sakon Nakhon, Thailand."
+  },
+  "Cookie": {
+    "title": "A note on cookies",
+    "body": "We use essential cookies to run this site and, with your consent, analytics to improve it. You can change your mind any time.",
+    "accept": "Accept all",
+    "reject": "Essential only",
+    "privacy": "Read our Privacy Policy"
+  },
+  "Policy": {
+    "shippingTitle": "Shipping",
+    "returnsTitle": "Returns",
+    "privacyTitle": "Privacy Policy (PDPA)",
+    "termsTitle": "Terms of Service",
+    "lastUpdated": "Last updated",
+    "draftNote": "This is placeholder policy copy for the first draft. Replace with legally reviewed text before launch."
+  },
+  "Common": {
+    "loading": "Loading",
+    "backToTop": "Back to top",
+    "skipToContent": "Skip to content",
+    "demoBanner": "Demo build — products, prices and imagery are placeholders.",
+    "notFoundTitle": "Page not found",
+    "notFoundBody": "The page you are looking for has moved or never existed.",
+    "notFoundCta": "Return home"
+  }
+}

@@ -1,26 +1,142 @@
 @import "tailwindcss";
 
+/*
+  KRAM SAKON — design tokens (Build Guide §4)
+  Palette: deep indigo on warm raw-cotton cream, brass as the only precious accent.
+  Tailwind v4 reads @theme tokens and generates utilities (bg-*, text-*, border-*, font-*).
+*/
+@theme {
+  /* Indigo (primary) */
+  --color-indigo-night: #141e33; /* near-black indigo: footer, hero overlay, body text */
+  --color-indigo-vat: #243b5a;   /* primary brand blue: buttons, key headings */
+  --color-indigo-dip: #3c5c84;   /* links, hover, secondary */
+  --color-indigo-first: #a9bbce; /* washed indigo: borders, muted, disabled */
+
+  /* Neutrals (warm raw cotton — NOT cool white) */
+  --color-cream: #f1ece2;        /* default page background */
+  --color-cream-cotton: #e5ddcd; /* alt sections, cards */
+  --color-cream-resist: #f7f4ec; /* text/icons on indigo */
+
+  /* Accents — sparing (brass < 5% of any screen) */
+  --color-brass: #a8894e;
+  --color-tamarind: #6b4f3a;
+
+  /* Hairline border colour (utility: border-line) */
+  --color-line: rgba(20, 30, 51, 0.12);
+
+  /* Type families — bound to next/font CSS variables in layout.tsx */
+  --font-display: var(--font-fraunces), var(--font-noto-serif-thai), Georgia, serif;
+  --font-sans: var(--font-inter), var(--font-plex-thai), system-ui, sans-serif;
+
+  /* Crisp luxury corners (radius 0–2px) */
+  --radius: 2px;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --line: rgba(20, 30, 51, 0.12);
+  --brass-line: rgba(168, 137, 78, 0.55);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-indigo-night);
+    font-family: var(--font-sans);
+    line-height: 1.5; /* Latin baseline; Thai overridden below (§8.4) */
+  }
+
+  /* Thai typography rules (§8.4): roomier leading, marks need vertical air. */
+  :lang(th) {
+    line-height: 1.8;
+  }
+  :lang(th) h1,
+  :lang(th) h2,
+  :lang(th) h3 {
+    line-height: 1.45;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--color-indigo-vat);
+    color: var(--color-cream-resist);
+  }
+
+  /* Visible keyboard focus (§9 a11y) */
+  :focus-visible {
+    outline: 2px solid var(--color-indigo-vat);
+    outline-offset: 2px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Eyebrow — uppercase + tracked for LATIN ONLY (§8.4). */
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-tamarind);
+    font-weight: 500;
+  }
+  /* Thai has no case: never all-caps, keep normal case with light tracking. */
+  :lang(th) .eyebrow {
+    text-transform: none;
+    letter-spacing: 0.06em;
+  }
+
+  /* Woven-selvedge hairline — the signature divider (§5.6) */
+  .selvedge {
+    height: 1px;
+    width: 100%;
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--brass-line) 0,
+      var(--brass-line) 3px,
+      transparent 3px,
+      transparent 7px
+    );
+    opacity: 0.7;
+  }
+
+  /* Dip-dye gradient — occasional section background (§5.6) */
+  .dip-dye {
+    background: linear-gradient(
+      to bottom,
+      var(--color-indigo-first) 0%,
+      var(--color-indigo-dip) 45%,
+      var(--color-indigo-night) 100%
+    );
+  }
+
+  .measure {
+    max-width: 62ch;
+  }
+}
+
+/* Restrained motion: honor reduced-motion (§5.5, §11) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Radial shibori bloom — loading motif (§5.6) */
+@keyframes shibori-bloom {
+  0% { transform: scale(0.6); opacity: 0.2; }
+  50% { opacity: 0.6; }
+  100% { transform: scale(1.4); opacity: 0; }
 }
